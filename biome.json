@@ -8,5 +8,9 @@
 		"rules": {
 			"recommended": true
 		}
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false
 	}
 }
