@@ -3,7 +3,7 @@ import EntryPoint from "../index";
 
 describe("<HomeScreen />", () => {
 	test("Text renders correctly on HomeScreen", () => {
-		const { getByText } = render(<EntryPoint />);
-		getByText("Open up App.tsx to start your app!");
+		const { getAllByText } = render(<EntryPoint />);
+		getAllByText("Login");
 	});
 });
