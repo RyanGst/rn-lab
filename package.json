@@ -9,7 +9,7 @@
 		"web": "expo start --web",
 		"type-check": "tsc --noEmit",
 		"test": "jest --watchAll",
-		"test:ci": "jest --ci "
+		"test:ci": "jest --ci --runInBand"
 	},
 	"dependencies": {
 		"@react-native-async-storage/async-storage": "^2.0.0",
