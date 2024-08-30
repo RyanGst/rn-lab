@@ -1,17 +1,12 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
+import { version } from "../../../package.json";
 import { styles } from "./login-styles";
 
 export const Login = () => {
 	return (
 		<View style={styles.container}>
-			<Text style={styles.title}>Login</Text>
-			<TouchableOpacity style={styles.loginButton}>
-				<Text style={styles.buttonText}>Login</Text>
-			</TouchableOpacity>
-			<TouchableOpacity style={styles.socialButton}>
-				<Text style={styles.buttonText}>Login with Social</Text>
-			</TouchableOpacity>
+			<Text style={styles.title}>{version}</Text>
 		</View>
 	);
 };
