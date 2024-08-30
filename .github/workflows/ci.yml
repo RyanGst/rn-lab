@@ -9,8 +9,8 @@ on:
       - main
 
 jobs:
-  setup:
-    name: Setup
+  build:
+    name: Build, Test, and Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -26,7 +26,6 @@ jobs:
         with:
           path: |
             ~/.npm
-            .next/cache
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-
@@ -34,53 +33,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-  test:
-    name: Test
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Restore cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-
       - name: Run type check
         run: npm run type-check
 
       - name: Run tests
         run: npm run test:ci
-
-  lint:
-    name: Lint
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Restore cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
 
       - name: Run Biome
         run: npx biome ci ./src
