@@ -10,6 +10,14 @@ My React Native lab.
 eas login
 ```
 
+```shell
+eas init
+```
+
+```shell
+eas build:configure
+```
+
 ### Publish
 
 ```shell
