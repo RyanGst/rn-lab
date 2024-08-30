@@ -1,6 +1,6 @@
 {
 	"name": "rn-lab",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"main": "expo/AppEntry.js",
 	"scripts": {
 		"start": "expo start",
