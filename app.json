@@ -22,9 +22,7 @@
 				"backgroundColor": "#ffffff"
 			},
 			"package": "click.ryangst.rn_lab",
-			"runtimeVersion": {
-				"policy": "appVersion"
-			}
+			"runtimeVersion": "1.0.0"
 		},
 		"web": {
 			"favicon": "./assets/favicon.png"
