@@ -36,4 +36,4 @@ jobs:
         run: npm ci
 
       - name: Create update
-        run: npx eas update --auto --non-interactive
+        run: eas update --auto --non-interactive
