@@ -13,14 +13,18 @@
 		},
 		"ios": {
 			"supportsTablet": true,
-			"bundleIdentifier": "click.ryangst.rn-lab"
+			"bundleIdentifier": "click.ryangst.rn-lab",
+			"runtimeVersion": "1.0.0"
 		},
 		"android": {
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/adaptive-icon.png",
 				"backgroundColor": "#ffffff"
 			},
-			"package": "click.ryangst.rn_lab"
+			"package": "click.ryangst.rn_lab",
+			"runtimeVersion": {
+				"policy": "appVersion"
+			}
 		},
 		"web": {
 			"favicon": "./assets/favicon.png"
@@ -30,6 +34,9 @@
 				"projectId": "daa4720e-6208-4e12-a317-a403b5395c3d"
 			}
 		},
-		"owner": "ryangst1"
+		"owner": "ryangst1",
+		"updates": {
+			"url": "https://u.expo.dev/daa4720e-6208-4e12-a317-a403b5395c3d"
+		}
 	}
 }
