@@ -13,7 +13,11 @@
 			"channel": "preview"
 		},
 		"production": {
-			"channel": "production"
+			"channel": "internal",
+			"distribution": "internal",
+			"android": {
+				"buildType": "apk"
+			}
 		}
 	},
 	"submit": {

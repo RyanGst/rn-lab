@@ -23,7 +23,7 @@ export const Login = () => {
 					entering={BounceIn}
 					exiting={BounceOut}
 				>
-					<Text style={styles.title}>{version}</Text>
+					<Text style={styles.title}>{version} 🥳</Text>
 				</Animated.View>
 			)}
 		</>
