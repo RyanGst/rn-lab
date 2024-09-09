@@ -11,7 +11,8 @@
 		"test": "jest --watchAll",
 		"test:ci": "jest --ci --runInBand",
 		"deploy:patch": "npm version patch && git push && git push --tags",
-		"supabase:dev": "supabase start"
+		"supabase:dev": "supabase start",
+		"supabase:gen": "supabase gen types --lang=typescript --local > ./src/database.types.ts"
 	},
 	"dependencies": {
 		"@expo/vector-icons": "^14.0.2",
