@@ -1,5 +1,3 @@
-import Constants from "expo-constants";
-
 require("dotenv").config();
 
 jest.mock("@react-native-async-storage/async-storage", () =>
