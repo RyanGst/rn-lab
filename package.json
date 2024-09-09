@@ -10,7 +10,8 @@
 		"type-check": "tsc --noEmit",
 		"test": "jest --watchAll",
 		"test:ci": "jest --ci --runInBand",
-		"deploy:patch": "npm version patch && git push && git push --tags"
+		"deploy:patch": "npm version patch && git push && git push --tags",
+		"supabase:dev": "supabase start"
 	},
 	"dependencies": {
 		"@expo/vector-icons": "^14.0.2",
@@ -44,6 +45,7 @@
 		"jest": "^29.7.0",
 		"jest-expo": "^51.0.4",
 		"lefthook": "^1.7.14",
+		"supabase": "^1.191.3",
 		"ts-node": "^10.9.2",
 		"typescript": "~5.3.3"
 	},
