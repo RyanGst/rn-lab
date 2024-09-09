@@ -4,11 +4,17 @@ import { createSessionFromUrl } from "./create-session-from-url";
 
 import type { Provider } from "@supabase/supabase-js";
 import { makeRedirectUri } from "expo-auth-session";
+import Constants from "expo-constants";
 
 WebBrowser.maybeCompleteAuthSession(); // required for web only
-const redirectTo = makeRedirectUri();
+
+const redirectTo = makeRedirectUri({
+	scheme: Constants.expoConfig?.scheme || "click.ryangst.rn-lab",
+	path: "auth/callback",
+});
 
 export const performOAuth = async (provider: Provider) => {
+	console.log(redirectTo);
 	const { data, error } = await supabase.auth.signInWithOAuth({
 		provider,
 		options: {
@@ -17,16 +23,14 @@ export const performOAuth = async (provider: Provider) => {
 		},
 	});
 	if (error) throw error;
+	if (!data?.url) throw new Error("No URL returned from signInWithOAuth");
 
-	const res = await WebBrowser.openAuthSessionAsync(
-		data?.url ?? "",
-		redirectTo,
-	);
+	const result = await WebBrowser.openAuthSessionAsync(data.url, redirectTo);
 
-	if (res.type === "success") {
-		const { url } = res;
+	if (result.type === "success") {
+		const { url } = result;
 		return await createSessionFromUrl(url);
 	}
 
-	console.log(res);
+	console.log("Failed to authenticate", result);
 };

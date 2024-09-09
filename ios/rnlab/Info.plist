@@ -28,6 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>click.ryangst.rn-lab</string>
+          <string>click.ryangst.rn-lab</string>
         </array>
       </dict>
     </array>

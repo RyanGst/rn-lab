@@ -6,7 +6,7 @@
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
 		"userInterfaceStyle": "light",
-		"scheme": "com.supabase.rn-lab",
+		"scheme": "click.ryangst.rn-lab",
 		"splash": {
 			"image": "./assets/splash.png",
 			"resizeMode": "contain",

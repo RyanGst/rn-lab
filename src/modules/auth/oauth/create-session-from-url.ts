@@ -13,6 +13,10 @@ export const createSessionFromUrl = async (url: string) => {
 		access_token,
 		refresh_token,
 	});
+
+	console.log("data", data);
+
 	if (error) throw error;
+
 	return data.session;
 };
