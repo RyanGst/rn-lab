@@ -4,7 +4,6 @@ import { createSessionFromUrl } from "./create-session-from-url";
 
 import type { Provider } from "@supabase/supabase-js";
 import { makeRedirectUri } from "expo-auth-session";
-import Constants from "expo-constants";
 
 WebBrowser.maybeCompleteAuthSession(); // required for web only
 

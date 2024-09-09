@@ -1,6 +1,4 @@
-import { NavigationContainer } from "@react-navigation/native";
 import { useEffect } from "react";
-import { Text, View } from "react-native";
 import { useAuth } from "../modules/auth/context/use-auth";
 import AuthStack from "./auth/AuthStack";
 import Dashboard from "./dashboard";
