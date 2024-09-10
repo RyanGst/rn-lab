@@ -33,7 +33,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 	};
 	const signIn = async () => {
 		try {
-			const session = await performOAuth("facebook");
+			const session = await performOAuth("github");
 			if (session?.user) {
 				setUser(session.user);
 			} else {

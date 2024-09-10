@@ -15,7 +15,7 @@ export const Login = () => {
 		<Animated.View entering={FadeIn} style={styles.container}>
 			<Text style={styles.title}>Version: {version}</Text>
 			<TouchableOpacity onPress={signIn} style={styles.loginButton}>
-				<Text>Login c/ Facebook</Text>
+				<Text>Login c/ Github</Text>
 			</TouchableOpacity>
 		</Animated.View>
 	);

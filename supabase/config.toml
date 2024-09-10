@@ -186,6 +186,12 @@ client_id = "env(SUPABASE_AUTH_FACEBOOK_CLIENT_ID)"
 secret = "env(SUPABASE_AUTH_FACEBOOK_SECRET)"
 redirect_uri = "env(SUPABASE_LOCAL_REDIRECT_URI)"
 
+[auth.external.github]
+enabled = true
+client_id = "env(SUPABASE_AUTH_GITHUB_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_GITHUB_SECRET)"
+redirect_uri = "env(SUPABASE_LOCAL_REDIRECT_URI)"
+
 
 [auth.external.apple]
 enabled = false
