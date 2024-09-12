@@ -47,7 +47,7 @@ jobs:
         run: pnpm -r run type-check
 
       - name: Run tests
-        run: pnpm -r run test:ci
+        run: pnpm test
 
       - name: Run Biome
         run: pnpm dlx biome ci ./apps/base/src
