@@ -17,6 +17,14 @@
 		"start": {
 			"cache": false,
 			"persistent": true
+		},
+		"type-check": {
+			"dependsOn": ["build"],
+			"outputs": []
+		},
+		"test:ci": {
+			"dependsOn": ["build"],
+			"outputs": []
 		}
 	}
 }
