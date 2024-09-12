@@ -8,7 +8,9 @@
 		"dev": "turbo run dev",
 		"lint": "turbo run lint",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
-		"start:app": "turbo run start"
+		"start:app": "turbo run start",
+		"type-check": "turbo run type-check",
+		"test:ci": "turbo run test:ci"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
