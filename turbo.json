@@ -15,17 +15,9 @@
 			"outputs": ["coverage/**"],
 			"inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
 		},
-		"start": {
+		"dev": {
 			"cache": false,
 			"persistent": true
-		},
-		"type-check": {
-			"dependsOn": ["build"],
-			"outputs": []
-		},
-		"test:ci": {
-			"dependsOn": ["build"],
-			"outputs": []
 		}
 	}
 }
