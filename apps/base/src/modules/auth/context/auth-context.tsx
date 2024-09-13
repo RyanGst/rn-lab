@@ -1,6 +1,7 @@
 import type { User } from "@supabase/supabase-js";
 import { type ReactNode, createContext, useEffect, useState } from "react";
 import { supabase } from "../../../utils/supabase";
+import { checkUser } from "../oauth/check-user";
 import { performOAuth } from "../oauth/perform-oauth";
 
 type AuthContextType = {
@@ -16,21 +17,21 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		checkUser();
+		verifyUserSession();
 	}, []);
 
-	const checkUser = async () => {
-		try {
-			const {
-				data: { session },
-			} = await supabase.auth.getSession();
-			setUser(session?.user ?? null);
-		} catch (error) {
-			console.error("Error checking user session:", error);
-		} finally {
-			setLoading(false);
+	const verifyUserSession = async () => {
+		const result = await checkUser();
+
+		if (result.ok) {
+			setUser(result.value);
+		} else {
+			console.error("Error verifying user session:", result.error);
 		}
+
+		setLoading(false);
 	};
+
 	const signIn = async () => {
 		try {
 			const session = await performOAuth("github");
