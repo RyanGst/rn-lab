@@ -1,0 +1,30 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"globalDependencies": [".env"],
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**", ".next/**", "android/**", "ios/**"]
+		},
+		"lint": {
+			"outputs": []
+		},
+		"test": {
+			"dependsOn": ["build"],
+			"outputs": ["coverage/**"],
+			"inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
+		},
+		"start": {
+			"cache": false,
+			"persistent": true
+		},
+		"type-check": {
+			"dependsOn": ["build"],
+			"outputs": []
+		},
+		"test:ci": {
+			"dependsOn": ["build"],
+			"outputs": []
+		}
+	}
+}
