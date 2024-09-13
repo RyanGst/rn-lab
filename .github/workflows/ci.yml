@@ -21,33 +21,14 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Run type check
-        run: pnpm -r run type-check
+        run: npm run type-check
 
       - name: Run tests
-        run: pnpm test
+        run: npm run test:ci
 
       - name: Run Biome
-        run: pnpm dlx biome ci ./apps/base/src
+        run: npm dlx biome ci ./apps/base/src
