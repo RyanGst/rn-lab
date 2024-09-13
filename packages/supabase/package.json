@@ -1,12 +1,18 @@
 {
-	"name": "supabase",
+	"name": "@rn-lab/supabase",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "index.ts",
+	"types": "index.ts",
+	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"@supabase/supabase-js": "^2.45.2",
+		"react-native-url-polyfill": "^2.0.0"
+	}
 }
