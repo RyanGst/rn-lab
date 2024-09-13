@@ -1,0 +1,14 @@
+{
+	"name": "@rn-lab/types",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.ts",
+	"types": "index.ts",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"No test specified\" && exit 0"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
