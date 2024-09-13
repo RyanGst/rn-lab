@@ -2,13 +2,13 @@
 	"name": "rn-lab",
 	"version": "1.0.0",
 	"private": true,
-	"workspaces": ["apps/*", "packages/*"],
 	"scripts": {
 		"build": "turbo run build",
 		"dev": "turbo run dev",
 		"lint": "turbo run lint",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
 		"start:app": "turbo run start",
+		"start:base": "turbo run start --filter='./apps/base' ",
 		"type-check": "turbo run type-check",
 		"test": "turbo run test:ci"
 	},
@@ -20,5 +20,6 @@
 	"engines": {
 		"node": ">=20"
 	},
-	"packageManager": "pnpm@9.10.0"
+	"packageManager": ">=npm@10.0.0",
+	"workspaces": ["apps/*", "packages/*"]
 }
