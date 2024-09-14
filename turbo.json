@@ -23,6 +23,11 @@
 			"dependsOn": ["^build"],
 			"cache": false,
 			"persistent": true
+		},
+		"test:ci": {
+			"dependsOn": ["^build"],
+			"cache": false,
+			"persistent": true
 		}
 	}
 }
