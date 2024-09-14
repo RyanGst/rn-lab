@@ -1,6 +1,6 @@
 import { Button } from "@rn-lab/ui";
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { Text } from "react-native";
 import Animated, { FadeIn } from "react-native-reanimated";
 import { version } from "../../../package.json";
 import { useAuth } from "../../modules/auth/context/use-auth";
